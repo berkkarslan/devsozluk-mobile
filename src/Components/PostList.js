@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import {  Header, Left, Body, Right } from 'native-base';
 
 export default class AppHeader extends Component {
   render() {
     return (
-     
-        <Header style={styles.header}>
-       
-          <Body>
-            <Text style={styles.title}>DEVSozluk</Text>
-          </Body>
-
-        </Header>
-    
+     <View>
+         
+     </View>
     );
   }
 }

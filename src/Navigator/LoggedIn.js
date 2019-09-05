@@ -12,12 +12,15 @@ const LoggedInNavigator = createMaterialBottomTabNavigator({
   Homepage: {  
     navigationOptions:{
       tabBarIcon:<Icon  name="home" size={30}  color="#FFF"/>,
+      title:'Anasayfa',
     },
+    
     screen: Dashboard
   },
   Profile: {
     navigationOptions:{
       tabBarIcon:<Icon  name="user" size={30} color="#FFF"/>,
+      title:'Profilim',
     },
     screen: Profile
   }
