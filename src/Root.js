@@ -10,7 +10,7 @@ export default class Root extends Component {
     console.disableYellowBox = true;
 
     this.state = {
-      loading: true,
+      loading: false,
       loggedIn: false
     };
   }
