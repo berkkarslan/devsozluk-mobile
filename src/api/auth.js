@@ -5,6 +5,7 @@ const Token = new TokenService({
   storageSystem: AsyncStorage
 });
 const login = (credentials) => {
+  console.warn(credentials);
   // Make API call to retrieve an access token
   const tok = 'this_is_a_demo_access_token';
   

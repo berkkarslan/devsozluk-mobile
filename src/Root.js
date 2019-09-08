@@ -7,10 +7,10 @@ import { isLoggedIn } from './Api/auth'
 export default class Root extends Component {
   constructor(props) {
     super(props);
-    console.disableYellowBox = true;
+    console.disableYellowBox = false;
 
     this.state = {
-      loading: false,
+      loading: true,
       loggedIn: false
     };
   }

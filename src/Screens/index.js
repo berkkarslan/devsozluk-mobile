@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native'
-import AppHeader from '../Components/AppHeader'
-
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import AppHeader from '../Components/AppHeader';
+import PostListItem from '../Components/PostListItem';
 export default class Dashboard extends Component {
 
   constructor(props) {
@@ -20,17 +21,10 @@ export default class Dashboard extends Component {
 
   }
 
-  _renderItem = ({item}) => (
-    <View style={styles.postsItem}>
-      <Text style={styles.postTitlle}>{item.title}</Text>
-      <Text style={styles.postDescription}>{item.description}</Text>
-    </View>
-  );
-
-  _keyExtractor = (item, index) => item.id;
+ 
 
   render() {
-    if(this.state.isLoading){ return(<View style={styles.base}><Text>Yükleniyor</Text></View> )}
+    if(this.state.isLoading){ return(<View style={styles.base}><ActivityIndicator  /></View> )}
 
       return (
         <View style={{flex:1}}>
@@ -40,15 +34,13 @@ export default class Dashboard extends Component {
           <View>
             <FlatList 
             data={this.state.posts} 
-            keyExtractor={this._keyExtractor}
-            renderItem={this._renderItem}
+            keyExtractor={ (item, index) => item.id.toString()}
+            renderItem={(item) => <PostListItem data={item}/>}
             />
           </View>
         </View>
       );
     }
-    
-
 }
 
 const styles = StyleSheet.create({
