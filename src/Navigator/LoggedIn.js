@@ -5,35 +5,43 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-import Dashboard from '../Screens/index'
-import Profile from '../Screens/Profile/profile'
+import Dashboard from '../Screens/index';
+import Profile from '../Screens/Profile/profile';
+import PostInsert from '../Screens/postInsert';
 
 const LoggedInNavigator = createMaterialBottomTabNavigator({
-  Homepage: {  
-    navigationOptions:{
-      tabBarIcon:<Icon  name="home" size={30}  color="#FFF"/>,
-      title:'Anasayfa',
+  Homepage: {
+    navigationOptions: {
+      tabBarIcon: <Icon name="home" size={30} color="#FFF" />,
+      title: 'Anasayfa',
     },
-    
+
     screen: Dashboard
   },
   Profile: {
-    navigationOptions:{
-      tabBarIcon:<Icon  name="user" size={30} color="#FFF"/>,
-      title:'Profilim',
+    navigationOptions: {
+      tabBarIcon: <Icon name="user" size={30} color="#FFF" />,
+      title: 'Profilim',
     },
     screen: Profile
+  },
+  PostInsert: {
+    screen: PostInsert,
+    navigationOptions: {
+      title: 'EntryEkle',
+    },
+
   }
 },
-{
-  tabBarOptions:{
-    labelStyle:{padding:0,margin:0}
-  },
-  initialRouteName: 'Homepage',
-  activeColor: '#f0edf6',
-  inactiveColor: '#3e2465',
-  barStyle: { backgroundColor: '#26ae61', padding:0,height:60, alignItems:'center' },
-}
+  {
+    tabBarOptions: {
+      labelStyle: { padding: 0, margin: 0 }
+    },
+    initialRouteName: 'Homepage',
+    activeColor: '#f0edf6',
+    inactiveColor: '#3e2465',
+    barStyle: { backgroundColor: '#26ae61', padding: 0, height: 60, alignItems: 'center' },
+  }
 
 
 );

@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import {  Header, Left, Body, Right } from 'native-base';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { withNavigation } from 'react-navigation';
 
-export default class AppHeader extends Component {
+class AppHeader extends Component {
   render() {
     return (
      
         <Header style={styles.header}>
           <Left>
 
-          </Left>
+          </Left> 
           <Body>
             <Text style={styles.title}>DEVSozluk</Text>
           </Body>
           <Right>
+            <TouchableOpacity onPress={()=> this.props.navigation.navigate('PostInsert')}>
             <Icon name="plus" color="#fff" size={20} style={{marginRight:15}}/>
+            </TouchableOpacity>
+           
           </Right>
 
         </Header>
@@ -23,6 +27,8 @@ export default class AppHeader extends Component {
     );
   }
 }
+
+export default withNavigation(AppHeader);
 
 const styles = StyleSheet.create({
     header: {
